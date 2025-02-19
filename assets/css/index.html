@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn-1nv.pages.dev/css/tailwind.css">
+    <link rel="stylesheet" href="https://cdn-1nv.pages.dev/css/style.css">
+    <link rel="stylesheet" href="https://cdn-1nv.pages.dev/css/custom.css">
+  
+</head>
+<body>
+ <!-- sidebar -->
+ <header
+ class="z-[100] h-[--m-top] fixed top-0 left-0 w-full flex items-center bg-white/80 sky-50 backdrop-blur-xl border-b border-slate-200 dark:bg-dark2 dark:border-slate-800">
+ <div class="flex items-center w-full xl:px-6 px-2 max-lg:gap-10">
+   <div class="2xl:w-[--w-side] lg:w-[--w-side-sm]">
+     <div class="flex items-center gap-1">
+       <button uk-toggle="target: #site__sidebar ; cls :!-translate-x-0"
+         class=" max-sm:hidden flex items-center justify-center w-8 h-8 text-xl rounded-full hover:bg-gray-100 xl:hidden dark:hover:bg-slate-600 group">
+         <ion-icon name="menu-outline" class="text-2xl group-aria-expanded:hidden"></ion-icon>
+         <ion-icon name="close-outline" class="hidden text-2xl group-aria-expanded:block"></ion-icon>
+       </button>
+       <div id="logo">
+         <a href="" aria-label="vidiachat">
+           <img src="assets/logo/lot.png" alt="" class="w-40 md:block hidden dark:!hidden">
+           <img src="assets/logo/lot.png" alt="" class="dark:md:block hidden">
+           <img src="assets/logo/lot.png" class="hidden max-md:block w-32 dark:!hidden" alt="">
+           <img src="assets/logo/lot.png" class="hidden dark:max-md:block w-32" alt="">
+         </a>
+       </div>
+     </div>
+   </div>
+   <div class="flex-1 relative">
+     <div class="max-w-[1220px] mx-auto flex items-center">
+       <!-- search -->
+       <!-- <div id="search-box" class="xl:w-[680px] sm:w-96 sm:relative rounded-xl overflow-hidden z-20 bg-secondary max-md:hidden w-screen left-0 max-sm:fixed max-sm:top-2 dark:bg-white/5">
+         <form action="/search" method="GET">
+           <input type="text" id="search" name="term" placeholder="Search Friends, videos .." class="w-full font-normal bg-transparent h-12 text-sm border-none" style="padding-right: 40px;">
+           <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2">
+             <ion-icon name="search"></ion-icon>
+           </button>
+
+         </form>
+       </div> -->
+
+       <!-- search dropdown-->
+       <div id="search--box"
+         class="xl:w-[680px] sm:w-96 sm:relative rounded-xl overflow-hidden z-20 bg-secondery max-md:hidden w-screen left-0 max-sm:fixed max-sm:top-2 dark:!bg-white/5">
+         <ion-icon name="search" class="absolute left-4 top-1/2 -translate-y-1/2"></ion-icon>
+         <input id="search" type="text" placeholder="Search Friends, videos .."
+           class="w-full !pl-10 !font-normal !bg-transparent h-12 !text-sm">
+       </div>
+       <!-- search dropdown-->
+       <div class="hidden uk- open z-10"
+         uk-drop="pos: bottom-center ; animation: uk-animation-slide-bottom-small;mode:click ">
+         <div
+           class="xl:w-[694px] sm:w-96 bg-white dark:bg-dark3 w-screen p-2 rounded-lg shadow-lg -mt-14 pt-14">
+           <nav id="suggestions" class="text-sm font-medium text-black dark:text-white">
+
+           </nav>
+           <hr class="-mx-2 mt-2 hidden">
+           <div class="flex justify-end pr-2 text-sm font-medium text-red-500 hidden">
+             <a href="#" class="flex hover:bg-red-50 dark:hover:bg-slate-700 p-1.5 rounded">
+               <ion-icon name="trash" class="mr-2 text-lg"></ion-icon> Clear your history
+             </a>
+           </div>
+         </div>
+
+       </div>
+       <script src="assets/script/search.js"></script>
+
+       <!-- header icons -->
+       <div
+         class="flex items-center sm:gap-4 gap-2 absolute right-5 top-1/2 -translate-y-1/2 text-black">
+         <!-- create -->
+         <button type="button"
+           class="sm:p-2 p-1 rounded-full relative sm:bg-secondery dark:text-white"
+           aria-haspopup="true" aria-expanded="false" aria-label="upload">
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15">
+             </path>
+           </svg>
+         </button>
+         <div class="hidden bg-white p-4 rounded-lg overflow-hidden drop-shadow-xl dark:bg-slate-700 md:w-[324px] w-screen border2"
+           uk-drop="offset:6;pos: bottom-right; mode: click; animate-out: true; animation: uk-animation-scale-up uk-transform-origin-top-right ">
+
+           <h3 class="font-bold text-md"> Create </h3>
+
+           <!-- slider -->
+
+
+           <!-- list -->
+           <ul class="-m-1 mt-4 pb-1 text-xs text-gray-500 dark:text-white"
+             uk-scrollspy="target: > li; cls: uk-animation-scale-up , uk-animation-slide-bottom-small ;repeat: true">
+             <li
+               class="flex items-center gap-4 hover:bg-secondery rounded-md p-1.5 cursor-pointer dark:hover:bg-white/10">
+               <img src="assets/images/icons/group.png" alt="" class="w-7">
+               <div class="flex-1">
+                 <a href="timeline.html">
+                   <h4 class="font-medium text-sm text-black dark:text-white"> Videos </h4>
+                 </a>
+                 <div class="mt-1 text-xs text-gray-500 dark:text-white"> Meet people with
+                   similar interests. </div>
+               </div>
+             </li>
+             <li
+               class="flex items-center gap-4 hover:bg-secondery rounded-md p-1.5 cursor-pointer dark:hover:bg-white/10">
+               <img src="assets/images/icons/page.png" alt="" class="w-7">
+               <div class="flex-1">
+                 <a href="timeline.html">
+                   <h4 class="font-medium text-sm text-black dark:text-white"> Shorts </h4>
+                 </a>
+                 <div class="mt-1"> Find and connect with businesses.
+                 </div>
+             </li>
+
+           </ul>
+
+
+         </div>
+         <?php
+         include 'api/token.php';
+         if (!isset($db_userid) || empty($db_userid)) {
+
+           echo "<a href=\"login.php\" type=\"button\" class=\"button bg-secondery max-sm:flex-1\"><svg
+viewBox=\"0 0 24 24\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\"
+xmlns=\"http://www.w3.org/2000/svg\">
+<g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g>
+<g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g>
+<g id=\"SVGRepo_iconCarrier\">
+   <circle cx=\"12\" cy=\"6\" r=\"4\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle>
+   <path opacity=\"0.5\"
+       d=\"M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z\"
+       stroke=\"currentColor\" stroke-width=\"1.5\"></path>
+</g>
+</svg>Log in  </a>";
+         } else {
+
+           $sql = "
+SELECT 
+u.username, 
+u.firstName, 
+u.lastName, 
+u.profilePic,
+(SELECT COUNT(*) FROM follow f1 WHERE f1.usertoid = u.userid AND f1.status = 0) AS followers_count,
+(SELECT COUNT(*) FROM follow f2 WHERE f2.userfromid = u.userid AND f2.status = 0) AS following_count
+FROM 
+users u
+WHERE 
+u.userid = ?;
+";
+
+           // Prepare and execute the statement
+           $stmt = $conn->prepare($sql);
+           $stmt->bind_param("i", $db_userid); // Bind the user ID
+           $stmt->execute();
+           $result = $stmt->get_result();
+
+           // Fetch and process data
+           if ($result->num_rows > 0) {
+             $userData = $result->fetch_assoc();
+
+             $username = $userData['username'];
+             $firstName = $userData['firstName'];
+             $lastName = $userData['lastName'];
+             $profilePic = $userData['profilePic'];
+             $following = $userData['following_count'];
+             $followers = $userData['followers_count'];
+
+             echo "<div class=\"rounded-full relative bg-secondery cursor-pointer shrink-0\">
+<img src=\"https://ik.imagekit.io/0lxkksdgf/tr:w-80/propic/$profilePic\" alt
+   class=\"sm:w-9 sm:h-9 w-7 h-7 rounded-full shadow shrink-0\">
+</div>
+<div class=\"hidden bg-white rounded-lg drop-shadow-xl dark:bg-slate-700 w-64 border2\"
+uk-drop=\"offset:6;pos: bottom-right;animate-out: true; animation: uk-animation-scale-up uk-transform-origin-top-right \">
+
+<a href=\"$username\">
+   <div class=\"p-4 py-5 flex items-center gap-4\">
+       <img src=\"https://ik.imagekit.io/0lxkksdgf/tr:w-80/propic/$profilePic\" alt
+           class=\"w-10 h-10 rounded-full shadow\">
+       <div class=\"flex-1\">
+           <h4 class=\"text-sm font-medium text-black\">$firstName &nbsp; $lastName</h4>
+           <div class=\"text-sm mt-1 text-blue-600 font-light dark:text-white/70\">
+               @$username</div>
+
+       </div>
+   </div>
+   <div class=\"flex gap-3.5\">
+       <div> <a href=\"following.php?/$username\"> <strong class=\"dark:text-white\">
+                   $following </strong> <span
+                   class=\"text-gray-400 dark:text-white/80 ml-1\">Following
+               </span> </a> </div>
+       <div> <a href=\"followers.php?/$username\"> <strong class=\"dark:text-white\">
+                   $followers </strong> <span
+                   class=\"text-gray-400 dark:text-white/80 ml-1\">Followers
+               </span> </a> </div>
+   </div>
+</a>
+
+<hr class=\"dark:border-gray-600/60\">
+
+<nav class=\"p-2 text-sm text-black font-normal dark:text-white\">
+   <a href=\"@$username\">
+       <div
+           class=\"flex items-center gap-2.5 hover:bg-secondery p-2 px-2.5 rounded-md dark:hover:bg-white/10\">
+           <svg viewBox=\"0 0 24 24\" class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\"
+               xmlns=\"http://www.w3.org/2000/svg\">
+               <g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g>
+               <g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\"
+                   stroke-linejoin=\"round\"></g>
+               <g id=\"SVGRepo_iconCarrier\">
+                   <circle cx=\"12\" cy=\"6\" r=\"4\" stroke=\"currentColor\"
+                       stroke-width=\"1.5\"></circle>
+                   <path opacity=\"0.5\"
+                       d=\"M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z\"
+                       stroke=\"currentColor\" stroke-width=\"1.5\"></path>
+               </g>
+           </svg>
+           My Profile
+       </div>
+   </a>
+   <a href=\"setting\">
+       <div
+           class=\"flex items-center gap-2.5 hover:bg-secondery p-2 px-2.5 rounded-md dark:hover:bg-white/10\">
+           <svg class=\"w-6\" xmlns=\"http://www.w3.org/2000/svg\"
+               enable-background=\"new 0 0 24 24\" height=\"24\" viewBox=\"0 0 24 24\"
+               width=\"24\" focusable=\"false\" aria-hidden=\"true\">
+               <path
+                   d=\"M10 9.35 15 12l-5 2.65ZM12 3a.73.73 0 00-.31.06L4.3 7.28a.79.79 0 00-.3.52v8.4a.79.79 0 00.3.52l7.39 4.22a.83.83 0 00.62 0l7.39-4.22a.79.79 0 00.3-.52V7.8a.79.79 0 00-.3-.52l-7.39-4.22A.73.73 0 0012 3m0-1a1.6 1.6 0 01.8.19l7.4 4.22A1.77 1.77 0 0121 7.8v8.4a1.77 1.77 0 01-.8 1.39l-7.4 4.22a1.78 1.78 0 01-1.6 0l-7.4-4.22A1.77 1.77 0 013 16.2V7.8a1.77 1.77 0 01.8-1.39l7.4-4.22A1.6 1.6 0 0112 2Zm0 4a.42.42 0 00-.17 0l-4.7 2.8a.59.59 0 00-.13.39v5.61a.65.65 0 00.13.37l4.7 2.8A.42.42 0 0012 18a.34.34 0 00.17 0l4.7-2.81a.56.56 0 00.13-.39V9.19a.62.62 0 00-.13-.37L12.17 6A.34.34 0 0012 6m0-1a1.44 1.44 0 01.69.17L17.39 8A1.46 1.46 0 0118 9.19v5.61a1.46 1.46 0 01-.61 1.2l-4.7 2.81A1.44 1.44 0 0112 19a1.4 1.4 0 01-.68-.17L6.62 16A1.47 1.47 0 016 14.8V9.19A1.47 1.47 0 016.62 8l4.7-2.8A1.4 1.4 0 0112 5Z\">
+               </path>
+           </svg>
+           Vidiachat Studio
+       </div>
+   </a>
+   <a href=\"https://ads.vidiachat.com/\">
+       <div
+           class=\"flex items-center gap-2.5 hover:bg-secondery p-2 px-2.5 rounded-md dark:hover:bg-white/10\">
+           <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\"
+               stroke-width=\"1.5\" stroke=\"currentColor\" class=\"w-6 h-6\">
+               <path stroke-linecap=\"round\" stroke-linejoin=\"round\"
+                   d=\"M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46\" />
+           </svg>
+           Advertising
+       </div>
+   </a>
+   <a href=\"setting\">
+       <div
+           class=\"flex items-center gap-2.5 hover:bg-secondery p-2 px-2.5 rounded-md dark:hover:bg-white/10\">
+           <svg class=\"w-6\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\"
+               viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\">
+               <path stroke-linecap=\"round\" stroke-linejoin=\"round\"
+                   d=\"M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z\">
+               </path>
+               <path stroke-linecap=\"round\" stroke-linejoin=\"round\"
+                   d=\"M15 12a3 3 0 11-6 0 3 3 0 016 0z\"></path>
+           </svg>
+           Setting
+       </div>
+   </a>
+
+   <hr class=\"-mx-2 my-2 dark:border-gray-600/60\">
+   <a href=\"logout\">
+       <div
+           class=\"flex items-center gap-2.5 hover:bg-secondery p-2 px-2.5 rounded-md dark:hover:bg-white/10\">
+           <svg class=\"w-6\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\"
+               viewBox=\"0 0 24 24\" stroke=\"currentColor\">
+               <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"
+                   d=\"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1\">
+               </path>
+           </svg>
+           Log Out
+       </div>
+   </a>
+</nav>
+</div>";
+           }
+         }
+
+
+         ?>
+
+
+
+
+       </div>
+     </div>
+   </div>
+ </div>
+</header></body>
+</html>
