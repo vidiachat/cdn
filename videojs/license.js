@@ -1,1 +1,1 @@
-const licenseKey = "08085252080f5e4010";
+const licenseKey = "120e555a050459521049525c09";
